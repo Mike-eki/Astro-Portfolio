@@ -1,0 +1,89 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="color-scheme" content="dark light" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--SOFT-COLOR-1: #E3F6E9;
+		--SOFT-COLOR-2: #BCEAD5;
+		--SOFT-COLOR-3: #9ED5C5;
+		--SOFT-COLOR-4: #8EC3B0;
+
+		--HARD-COLOR-1: #D4ECDD;
+		--HARD-COLOR-2: #4B848F;
+		--HARD-COLOR-3: #152D35;
+		--HARD-COLOR-4: #112031;
+
+		--clr-light: #FFF;
+		--clr-semilight: #DDD;
+		--clr-semidark: #444;
+		--clr-dark: #000;
+	}
+
+	@media (prefers-color-scheme: light) {
+		:root {
+			--clr-light: var(--HARD-COLOR-2);
+			--clr-semilight: var(--SOFT-COLOR-3);
+			--clr-semidark: var(--SOFT-COLOR-2);
+			--clr-dark: var(--SOFT-COLOR-1);
+		}
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--clr-light: var(--HARD-COLOR-1);
+			--clr-semilight: var(--HARD-COLOR-2);
+			--clr-semidark: var(--HARD-COLOR-3);
+			--clr-dark: var(--HARD-COLOR-4);
+		}
+	}
+	html {
+		font-family: Montserrat ,system-ui, sans-serif;
+		color: var(--clr-light);
+		background: var(--clr-dark);
+	}
+	body, figure, h1, h2, h3, h4, h5, p {
+		margin: 0;
+		padding: 0;
+	}
+	h1, h2 {
+		font-family: Unbounded;
+	}
+	a {
+		text-decoration: none;
+	}
+	button {
+		appearance: none;
+		border: none;
+	}
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>
