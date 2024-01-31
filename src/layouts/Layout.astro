@@ -23,43 +23,56 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--SOFT-COLOR-1: #E3F6E9;
-		--SOFT-COLOR-2: #BCEAD5;
-		--SOFT-COLOR-3: #9ED5C5;
-		--SOFT-COLOR-4: #8EC3B0;
+		--SOFT-1: #E3F6E9;
+		--SOFT-2: #BCEAD5;
 
-		--HARD-COLOR-1: #D4ECDD;
-		--HARD-COLOR-2: #4B848F;
-		--HARD-COLOR-3: #152D35;
-		--HARD-COLOR-4: #112031;
+		/* --SOFT-3: #9ED5C5;
+		--SOFT-4: #8EC3B0; */
 
-		--clr-light: #FFF;
-		--clr-semilight: #DDD;
-		--clr-semidark: #444;
-		--clr-dark: #000;
+		--NORMAL-1: #5cd8b1;
+		--NORMAL-2: #39737f;
+
+		--HARD-1: #1b3c4f;
+		--HARD-2: #112031;
+
+		/* 60% of the page - Background */
+		--primary-l: #FFF;
+		--primary-d: #DDD;
+		/* 30% of the page - Text */
+		--secondary-l: #999;
+		--secondary-d: #666;
+		/* 10% of the page - CTA, Buttons, highlights, hyperlinks */
+		--accent-l: #333;
+		--accent-d: #000;
+
 	}
 
 	@media (prefers-color-scheme: light) {
 		:root {
-			--clr-light: var(--HARD-COLOR-2);
-			--clr-semilight: var(--SOFT-COLOR-3);
-			--clr-semidark: var(--SOFT-COLOR-2);
-			--clr-dark: var(--SOFT-COLOR-1);
+			--primary-l: var(--SOFT-1);
+			--primary-d: var(--SOFT-2);
+			--secondary-l: var(--HARD-2);
+			--secondary-d: var(--HARD-1);
+			--accent-l: var(--NORMAL-2);
+			--accent-d: var(--NORMAL-1);
 		}
 	}
 
 	@media (prefers-color-scheme: dark) {
 		:root {
-			--clr-light: var(--HARD-COLOR-1);
-			--clr-semilight: var(--HARD-COLOR-2);
-			--clr-semidark: var(--HARD-COLOR-3);
-			--clr-dark: var(--HARD-COLOR-4);
+			--primary-l: var(--HARD-2);
+			--primary-d: var(--HARD-1);
+			--secondary-l: var(--SOFT-1);
+			--secondary-d: var(--SOFT-2);
+			--accent-l: var(--NORMAL-1);
+			--accent-d: var(--NORMAL-2);
 		}
 	}
+
 	html {
 		font-family: Montserrat ,system-ui, sans-serif;
-		color: var(--clr-light);
-		background: var(--clr-dark);
+		color: var(--secondary-l);
+		background-color: var(--primary-l);
 	}
 	body, figure, h1, h2, h3, h4, h5, p {
 		margin: 0;
@@ -85,5 +98,30 @@ const { title } = Astro.props;
 			Bitstream Vera Sans Mono,
 			Courier New,
 			monospace;
+	}
+
+	::-webkit-scrollbar {
+		width: 0.75rem;
+		height: 0.75rem;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--accent-d);
+		border-radius: 100vw;
+		margin-block: .4rem;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--accent-l);
+		border-radius: 100vw;
+		border: .2rem solid var(--accent-d);
+		margin-block: .4rem;
+	}
+
+	@supports (scrollbar-color: red blue;) {
+		* {
+			scrollbar-color: hsl(120 90% 30% / 1) hsl(120 70% 50% / 1);
+			scrollbar-width: thin;
+		}
 	}
 </style>
