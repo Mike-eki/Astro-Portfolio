@@ -1,39 +1,12 @@
 ---
-import HTML from '../icons/html.astro'
-import CSS from '../icons/css.astro'
-import JavaScript from '../icons/javascript.astro';
-import Git from '../icons/git.astro';
-import Trello from '../icons/trello.astro';
-import VSCode from '../icons/vscode.astro';
-import React from '../icons/react.astro';
-import AstroIcon from '../icons/astro-icon.astro';
-import NodeJS from '../icons/nodejs.astro';
-import ExpressJS from '../icons/express.astro';
-import NextJS from '../icons/nextjs.astro';
-import Figma from '../icons/figma.astro';
-
-const iconMap = {
-    HTML,
-    CSS,
-    JavaScript,
-    Git,
-    Trello,
-    VSCode,
-    React,
-    AstroIcon,
-    NodeJS,
-    ExpressJS,
-    NextJS,
-    Figma
-}
+import Icon from "./Icon.astro";
 
 const { iconName = 'CSS', color, fill, width } = Astro.props;
 
-const Icon = iconMap[iconName]
-  
 ---
 
-<span class={"default-bg"}><Icon {fill} {color} {width}/>
+<span class={"default-bg"}>
+    <Icon {iconName} {fill} {color} {width}/>
     <slot/>
 </span>
 

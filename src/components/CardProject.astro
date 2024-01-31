@@ -1,0 +1,293 @@
+---
+import Icon from "./Icon.astro";
+import Pill from "./Pill.astro";
+
+const {
+  title = "NombreApp",
+  description = "Lorem Ipsum",
+  iconName = "Umbrella",
+  mockFrame,
+  techPills,
+  toolPills,
+  links,
+} = Astro.props;
+
+
+
+---
+
+<article class="projects-card-container-grid">
+  <header class="card-title">
+    <h4>{title}</h4>
+  </header>
+  <aside class="card-paragraph">
+    <p>
+      {description}
+    </p>
+  </aside>
+  <figure class="card-icon-category">
+    <Icon
+	  {iconName}
+      width="50px"
+      fill="var(--secondary-l)"
+      color="var(--secondary-d)"
+    />
+  </figure>
+  <article class="card-techs">
+    <h4>Tecnologias</h4>
+    <footer>
+      {
+        techPills.map(({ iconName, width, fill, color, content }) => 
+          <Pill {iconName} {width} {fill} {color}>
+			{content}
+		  </Pill>
+        )
+      }
+    </footer>
+  </article>
+  <article class="card-tools">
+    <h4>Herramientas</h4>
+    <footer>
+		{
+			toolPills.map(({ iconName, width, fill, color, content }) => 
+			  <Pill {iconName} {width} {fill} {color}>
+				{content}
+			  </Pill>
+			)
+		  }
+    </footer>
+  </article>
+  <a href={links.code} class="card-button code">
+    <svg
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
+        d="M14 4l-4 16"></path></svg
+    >
+    <span>Codigo</span>
+  </a>
+  <a href={links.live} class="card-button live">
+    <svg
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+      ></path><path d="M11 13l9 -9"></path><path d="M15 4h5v5"></path></svg
+    >
+    <span>En vivo</span>
+  </a>
+  <a href={links.details} class="card-button details">
+    <svg
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M13 5h8"></path><path d="M13 9h5"></path><path d="M13 15h8"
+      ></path><path d="M13 19h5"></path><path
+        d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"
+      ></path><path
+        d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"
+      ></path></svg
+    >
+    <span>Detalles</span>
+  </a>
+  <picture class="card-mockup-frame">
+    <img src={mockFrame} alt="" />
+  </picture>
+</article>
+
+<style>
+  .projects-card-container-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(4, 100px);
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    grid-gap: 0.75rem;
+    max-width: 800px;
+  }
+  .projects-card-container-grid > * {
+    background-color: var(--primary-d);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border-radius: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .card-title {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    font-size: 2rem;
+  }
+  .card-title h4 {
+    margin: 1rem;
+  }
+  .card-paragraph {
+    text-align: start;
+    grid-column: 4 / 7;
+  }
+  .card-paragraph p {
+    font-size: 0.8rem;
+    margin: 0.66rem;
+	text-wrap: pretty;
+  }
+  .card-icon-category svg {
+    width: 50px;
+  }
+  .card-icon-category {
+    grid-column: 7 / 8;
+  }
+  .card-techs {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+  }
+  .card-techs h4,
+  .card-tools h4 {
+    margin-inline: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .card-techs footer,
+  .card-tools footer {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    gap: 0.3rem;
+    padding: 0 0.8rem 0.4rem;
+    overflow-x: auto;
+  }
+  .card-tools {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+  }
+  .card-button {
+    font-size: 0.8rem;
+    color: var(--secondary-l);
+  }
+  .card-button:hover {
+    color: var(--accent-l);
+  }
+  .card-button svg {
+    width: 36px;
+  }
+  .card-button .code {
+    grid-column: 1 / 2;
+  }
+  .card-button .live {
+    grid-column: 2 / 3;
+  }
+  .card-button .details {
+    grid-column: 3 / 4;
+  }
+  .card-mockup-frame img {
+    max-width: 100%;
+  }
+  .card-mockup-frame {
+    display: inline-block;
+    grid-column: 4 / 8;
+    grid-row: 2 / 5;
+  }
+  @media (max-width: 820px) {
+    .projects-card-container-grid {
+      grid-template-columns: repeat(3, 125px);
+      grid-template-rows: repeat(6, 125px);
+    }
+
+    .card-title {
+      grid-column: 1 / 3;
+      font-size: 1.8rem;
+    }
+    .card-paragraph {
+      grid-column: 2 / 4;
+      grid-row: 2 / 3;
+    }
+    .card-icon-category {
+      grid-column: 3 / 4;
+    }
+    .card-mockup-frame {
+      grid-column: 1 / 4;
+      grid-row: 3 / 5;
+    }
+    .card-techs {
+      grid-column: 1 / 3;
+      grid-row: 5 / 6;
+    }
+    .card-tools {
+      grid-column: 2 / 4;
+      grid-row: 6 / 7;
+    }
+    .card-button.details {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+    .card-button.code {
+      grid-column: 3 / 4;
+      grid-row: 5 / 6;
+    }
+    .card-button.live {
+      grid-column: 1 / 2;
+      grid-row: 6 / 7;
+    }
+  }
+  @media (max-width: 445px) {
+    .projects-card-container-grid {
+      grid-template-columns: repeat(3, 90px);
+      grid-template-rows: repeat(6, 90px);
+    }
+
+    .card-title {
+      grid-column: 1 / 3;
+      font-size: 1.5rem;
+    }
+    .card-paragraph {
+      grid-column: 2 / 4;
+      grid-row: 2 / 3;
+    }
+    .card-paragraph p {
+      font-size: 0.66rem;
+    }
+    .card-icon-category {
+      grid-column: 3 / 4;
+    }
+    .card-mockup-frame {
+      grid-column: 1 / 4;
+      grid-row: 3 / 5;
+    }
+    .card-techs {
+      grid-column: 1 / 3;
+      grid-row: 5 / 6;
+    }
+    .card-tools {
+      grid-column: 2 / 4;
+      grid-row: 6 / 7;
+    }
+    .card-button.details {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+    .card-button.code {
+      grid-column: 3 / 4;
+      grid-row: 5 / 6;
+    }
+    .card-button.live {
+      grid-column: 1 / 2;
+      grid-row: 6 / 7;
+    }
+  }
+</style>

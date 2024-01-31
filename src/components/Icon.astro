@@ -1,0 +1,47 @@
+---
+import Umbrella from '../icons/type/umbrella.astro'
+import Home from '../icons/utilities/home.astro'
+import LinkedIn from '../icons/social/linkedin.astro'
+import Github from '../icons/social/github.astro'
+import Email from '../icons/social/email.astro'
+
+import HTML from '../icons/techs/html.astro'
+import CSS from '../icons/techs/css.astro'
+import JavaScript from '../icons/techs/javascript.astro';
+import React from '../icons/techs/react.astro';
+import AstroIcon from '../icons/techs/astro-icon.astro';
+import NodeJS from '../icons/techs/nodejs.astro';
+import ExpressJS from '../icons/techs/express.astro';
+import NextJS from '../icons/techs/nextjs.astro';
+import Trello from '../icons/tools/trello.astro';
+import VSCode from '../icons/tools/vscode.astro';
+import Git from '../icons/tools/git.astro';
+import Figma from '../icons/tools/figma.astro';
+
+const {iconName = "Umbrella", fill, color, width} = Astro.props
+
+const iconMap = {
+    Umbrella,
+    Home,
+    LinkedIn,
+    Github,
+    Email,
+
+    HTML,
+    CSS,
+    JavaScript,
+    Git,
+    Trello,
+    VSCode,
+    React,
+    AstroIcon,
+    NodeJS,
+    ExpressJS,
+    NextJS,
+    Figma
+}
+
+const IconType = iconMap[iconName]
+---
+
+<IconType {fill} {color} {width}/>
