@@ -1,49 +1,15 @@
 ---
 import CardProject from "../CardProject.astro";
+import BaseSection from "../BaseSection.astro";
 import projectsDataJSON from '../../data/data.json'
 
 const { projects } = projectsDataJSON
 
 ---
 
-<section class="projects-background">
-  <h3 class="projects-title">Proyectos</h3>
-  <aside class="projects-container">
+<BaseSection title="Proyectos">
     {
       projects.map(({title, description, iconName, techPills, toolPills, links, mockFrame}) => 
       <CardProject {title} {description} {iconName} {techPills} {toolPills} {links} {mockFrame} />)
     }
-  </aside>
-</section>
-
-<style>
-  .projects-background {
-    --pd-title: 1.75rem;
-    position: relative;
-    /* background-color: var(--primary-l); */
-    min-height: 100vh;
-    min-height: 100svh;
-  }
-
-  .projects-title {
-    display: inline-block;
-    padding: var(--pd-title);
-    border-radius: 3rem 3rem 12px 12px;
-    font-size: 2rem;
-    background-color: var(--secondary-l);
-    color: var(--primary-l);
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .projects-container {
-    padding-block: calc(var(--pd-title) * 2 + 1rem);
-    padding-inline: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-</style>
+</BaseSection>

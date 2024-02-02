@@ -1,4 +1,94 @@
 {
+  "skills": {
+    "techs": [
+      {
+        "iconName": "HTML",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "HTML"
+      },
+      {
+        "iconName": "CSS",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "CSS"
+      },
+      {
+        "iconName": "JavaScript",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "JavaScript"
+      },
+      {
+        "iconName": "React",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "React"
+      },
+      {
+        "iconName": "AstroIcon",
+        "width": "0.8rem",
+        "fill": "var(--secondary-l)",
+        "color": "var(--secondary-d)",
+        "content": "Astro"
+      },
+      {
+        "iconName": "NodeJS",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "NodeJS"
+      },
+      {
+        "iconName": "ExpressJS",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "ExpressJS"
+      },
+      {
+        "iconName": "NextJS",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "NextJS"
+      }
+    ],
+    "tools": [
+      {
+        "iconName": "Git",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "Git"
+      },
+      {
+        "iconName": "VSCode",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "Visual Studio Code"
+      },
+      {
+        "iconName": "Trello",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--primary-d)",
+        "content": "Trello"
+      },
+      {
+        "iconName": "Figma",
+        "width": "0.8rem",
+        "fill": "var(--secondary-d)",
+        "color": "var(--secondary-l)",
+        "content": "Figma"
+      }
+    ]
+  },
   "projects": [
     {
       "title": "NombreApp",
