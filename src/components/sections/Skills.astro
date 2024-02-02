@@ -1,7 +1,73 @@
+---
+import Pill from "../Pill.astro";
+const width = "1.5rem"
+---
+
 <section>
-    Skills
+  <h2>Habilidades</h2>
+  <aside>
+    <Pill
+      iconName="HTML"
+      {width}
+      fill="var(--secondary-l)"
+      color="var(--primary-d)"
+    >
+      <h3>HTML</h3>
+    </Pill>
+    <Pill
+      iconName="CSS"
+      {width}
+      fill="var(--secondary-l)"
+      color="var(--primary-d)"
+    >
+      <h3>CSS</h3>
+    </Pill>
+    <Pill
+      iconName="JavaScript"
+      {width}
+      fill="var(--secondary-l)"
+      color="var(--primary-d)"
+    >
+      <h3>JavaScript</h3>
+    </Pill>
+    <Pill
+      iconName="React"
+      {width}
+      fill="var(--secondary-l)"
+      color="var(--primary-d)"
+    >
+      <h3>React</h3>
+    </Pill>
+    <Pill
+      iconName="AstroIcon"
+      {width}
+      fill="var(--secondary-l)"
+      color="var(--secondary-d)"
+    >
+      <h3>Astro</h3>
+    </Pill>
+    <Pill
+      iconName="NodeJS"
+      {width}
+      fill="var(--secondary-l)"
+      color="var(--primary-d)"
+    >
+      <h3>NodeJS</h3>
+    </Pill>
+  </aside>
 </section>
 
 <style>
-    
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  aside {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 </style>
