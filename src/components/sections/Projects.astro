@@ -1,8 +1,8 @@
 ---
 import CardProject from "../CardProject.astro";
-import projectsData from '../../data/data.json'
+import projectsDataJSON from '../../data/data.json'
 
-const { projects } = projectsData
+const { projects } = projectsDataJSON
 
 ---
 
@@ -20,7 +20,7 @@ const { projects } = projectsData
   .projects-background {
     --pd-title: 1.75rem;
     position: relative;
-    background-color: var(--primary-l);
+    /* background-color: var(--primary-l); */
     min-height: 100vh;
     min-height: 100svh;
   }

@@ -1,5 +1,7 @@
 ---
+import EmailButtons from "../EmailButtons.astro";
 import Icon from "../Icon.astro";
+import Modal from "../Modal.astro";
 
 ---
 
@@ -17,14 +19,16 @@ import Icon from "../Icon.astro";
     <a href="#">
       <Icon iconName="LinkedIn" width="36px" fill={"var(--secondary-l)"} />
     </a>
-
     <a href="#">
       <Icon iconName="Github" width="36px" fill={"var(--secondary-l)"} />
     </a>
-
-    <a href="#">
+    <Modal>
+      <EmailButtons slot="modal-content"/>
+      
       <Icon iconName="Email" width="36px" fill={"var(--secondary-l)"} />
-    </a>
+    </Mod>
+    <!-- <a href="#">
+    </a> -->
   </aside>
   <span class="navigation-menu-icon">
     <svg
@@ -71,6 +75,8 @@ import Icon from "../Icon.astro";
     pointer-events: none;
   }
 
+  /* --------- */
+
   .fixed-header {
     display: grid;
     place-items: center;
@@ -79,6 +85,8 @@ import Icon from "../Icon.astro";
     width: 100%;
     padding-block: 16px;
     z-index: 1;
+    background: transparent;
+    backdrop-filter: blur(15px);
   }
 
   .logo-container {
@@ -92,7 +100,12 @@ import Icon from "../Icon.astro";
   .navigation-links a {
     color: var(--secondary-d);
     font-weight: 600;
+    position: relative;
   }
+  .navigation-links a:hover {
+    color: var(--accent-l);
+  }
+
 
   .social-media-links {
     display: flex;
@@ -102,11 +115,7 @@ import Icon from "../Icon.astro";
   .social-media-links a {
     height: 36px;
   }
-  .social-media-links svg {
-    fill: var(--secondary-l);
-    width: 36px;
-    height: 36px;
-  }
+
 
   .navigation-menu {
     --padding-menu: 32px;
