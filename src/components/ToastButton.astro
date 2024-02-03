@@ -1,0 +1,62 @@
+<button class="btn btn-toast">
+  <slot />
+</button>
+
+<style>
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-d);
+    border-radius: 10px;
+    padding: 0.75rem;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  const email = "miqueas.moreno2016@gmail.com";
+  const btnToasts = document.querySelectorAll(".btn-toast");
+  const toast = document.querySelector("#toast"); // at index.astro
+  const toastDialog = document.querySelector("#toast-dialog") // at Modal.astro
+
+  function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+  async function openToast(message) {
+
+    toast.classList.toggle("show")
+    toastDialog.classList.toggle("show")
+    toast.innerText = message;
+    toastDialog.innerText = message;
+    await timeout(5000)
+
+    toast.classList.toggle("hide")
+    toastDialog.classList.toggle("hide")
+    await timeout(500)
+    
+    toast.className = toast.className.replace("show", "")
+    toastDialog.className = toastDialog.className.replace("show", "")
+    toast.className = toast.className.replace("hide", "")
+    toastDialog.className = toastDialog.className.replace("hide", "")
+  }
+
+    async function copyToClipboard() {
+      try {
+        await navigator.clipboard.writeText(email);
+        const message = '¡Email copiado!'
+        openToast(message);
+      } catch (err) {
+        console.error("Failed to copy: ", err);
+      }
+    }
+
+    btnToasts.forEach((btnToast) => {
+      btnToast.addEventListener("click", async () => {
+        await copyToClipboard()
+      });
+    });
+
+  
+</script>

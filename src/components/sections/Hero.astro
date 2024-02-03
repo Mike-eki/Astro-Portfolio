@@ -32,8 +32,8 @@ import Fireflies from '../animations/Fireflies.astro'
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     min-height: 100svh;
+    min-height: 100vh;
   }
 
   .hero-container {
@@ -110,12 +110,14 @@ import Fireflies from '../animations/Fireflies.astro'
   }
 
   .hero-photo-container-grid {
+    display: flex;
     grid-row: 2;
-    margin-bottom: -1em;
+    margin-bottom: -1rem;
     justify-self: center
   }
 
   .hero-photo-container-grid img {
+    max-width: 100%;
     width: 230px;
   }
 

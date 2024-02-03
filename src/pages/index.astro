@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/sections/Nav.astro";
-import Hero from "../components/sections/Hero.astro"
-import Projects from "../components/sections/Projects.astro"
+import Hero from "../components/sections/Hero.astro";
+import Projects from "../components/sections/Projects.astro";
 import Skills from "../components/sections/Skills.astro";
 import About from "../components/sections/About.astro";
 ---
@@ -12,9 +12,86 @@ import About from "../components/sections/About.astro";
   <Hero />
   <Projects />
   <Skills />
-  <About/>
+  <About />
+  <div id="toast" class="toast">Content</div>
 </Layout>
 
-<style>
+<style is:global>
+  .toast {
+    display: block;
+    visibility: hidden;
+    position: fixed;
+    background-color: var(--accent-l);
+    color: var(--primary-l);
+    bottom: 1rem;
+    left: 1rem;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    padding: 1rem;
+    z-index: 10;
+  }
+
+  .show {
+    visibility: visible;
+    -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  .hide {
+    -webkit-animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-bottom 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  }
+
+  @-webkit-keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(1000px);
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(1000px);
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+
+  @-webkit-keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+}
 
 </style>

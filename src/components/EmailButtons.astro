@@ -1,10 +1,10 @@
 ---
 import Icon from "./Icon.astro";
+import ToastButton from "./ToastButton.astro";
 
 const width = "1rem";
 const color = "var(--primary-l)";
 const email = 'miqueas.moreno2016@gmail.com'
-  
 ---
 
 <!-- Pulir componente -->
@@ -14,9 +14,12 @@ const email = 'miqueas.moreno2016@gmail.com'
     <a class="email-button" href="mailto:miqueas.moreno2016@gmail.com"
       ><Icon iconName="Send" {width} {color} /></a
     >
-    <button class="email-button copy-btn" id="copy"
+    <!-- <button class="email-button copy-btn" id="copy"
       ><Icon iconName="Copy" {width} {color} /></button
-    >
+    > -->
+      <ToastButton >
+        <Icon iconName="Copy" {width} {color} />
+      </ToastButton>
     <button class="email-button">
       <Icon iconName="CV" {width} {color} />
     </button>
@@ -78,18 +81,5 @@ const email = 'miqueas.moreno2016@gmail.com'
 </style>
 
 <script>
-  const email = 'miqueas.moreno2016@gmail.com'
-  const copyBtns = document.querySelectorAll('.copy-btn')
-
-  copyBtns.forEach((copyBtn) => {
-    copyBtn.addEventListener('click', async () => {
-      try {
-      await navigator.clipboard.writeText(email);  
-      console.log('Content copied to clipboard');  
-    } catch (err) {  
-      console.error('Failed to copy: ', err);  
-    }  
-    })
-  })
   
 </script>

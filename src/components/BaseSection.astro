@@ -5,9 +5,10 @@ const {title} = Astro.props
 <section>
     <h3>{title}</h3>
     <aside>
-        <slot />
+        <slot name="map-content"/>
+        <slot></slot>
     </aside>
-  </section>
+</section>
 
 
 

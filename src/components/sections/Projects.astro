@@ -8,8 +8,10 @@ const { projects } = projectsDataJSON
 ---
 
 <BaseSection title="Proyectos">
+  <Fragment slot="map-content">
     {
       projects.map(({title, description, iconName, techPills, toolPills, links, mockFrame}) => 
       <CardProject {title} {description} {iconName} {techPills} {toolPills} {links} {mockFrame} />)
     }
+  </Fragment>
 </BaseSection>
