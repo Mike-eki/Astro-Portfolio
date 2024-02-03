@@ -22,6 +22,52 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+
+	@font-face {
+		font-family: 'Montserrat';
+		font-style: regular;
+		font-weight: 400;
+		src:
+			url('./fonts/Montserrat-Regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Montserrat';
+		font-style: medium;
+		font-weight: 500;
+		src:
+			url('./fonts/Montserrat-Medium.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Montserrat';
+		font-style: semibold;
+		font-weight: 600;
+		src:
+			url('./fonts/Montserrat-SemiBold.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Unbounded';
+		font-style: regular;
+		font-weight: 400;
+		src: 
+			url('./fonts/Unbounded-Regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Unbounded';
+		font-style: medium;
+		font-weight: 500;
+		src: 
+			url('./fonts/Unbounded-Medium.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Unbounded';
+		font-style: semibold;
+		font-weight: 600;
+		src: 
+			url('./fonts/Unbounded-SemiBold.woff2') format('woff2');
+	}
+	
+
 	:root {
 		--SOFT-1: #E3F6E9;
 		--SOFT-2: #BCEAD5;
@@ -70,7 +116,7 @@ const { title } = Astro.props;
 	}
 
 	html {
-		font-family: Montserrat ,system-ui, sans-serif;
+		font-family: 'Montserrat', system-ui, sans-serif;
 		color: var(--secondary-l);
 		background-color: var(--primary-l);
 	}
@@ -79,7 +125,7 @@ const { title } = Astro.props;
 		padding: 0;
 	}
 	h1, h2 {
-		font-family: Unbounded;
+		font-family: 'Unbounded';
 	}
 	a {
 		text-decoration: none;
