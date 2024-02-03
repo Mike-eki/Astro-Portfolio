@@ -3,11 +3,14 @@ import EmailButtons from "../EmailButtons.astro";
 import Icon from "../Icon.astro";
 import Modal from "../Modal.astro";
 
+const width = "36px"
+const fill = "var(--secondary-l)"
+
 ---
 
 <header class="fixed-header">
   <a href="#" class="logo-container">
-    <Icon iconName="Home" width="36px" fill={"var(--secondary-l)"} />
+    <Icon iconName="Home" {width} {fill} />
   </a>
   <nav class="navigation-links">
     <a href="#">Home</a>
@@ -16,19 +19,16 @@ import Modal from "../Modal.astro";
     <a href="#">Sobre mi</a>
   </nav>
   <aside class="social-media-links">
-    <a href="#">
-      <Icon iconName="LinkedIn" width="36px" fill={"var(--secondary-l)"} />
+    <a target="_blank" href="https://www.linkedin.com/in/miqueas-moreno">
+      <Icon iconName="LinkedIn" {width} {fill} />
     </a>
-    <a href="#">
-      <Icon iconName="Github" width="36px" fill={"var(--secondary-l)"} />
+    <a target="_blank" href="https://www.github.com/Mike-eki">
+      <Icon iconName="Github" {width} {fill} />
     </a>
     <Modal>
       <EmailButtons slot="modal-content"/>
-      
-      <Icon iconName="Email" width="36px" fill={"var(--secondary-l)"} />
-    </Mod>
-    <!-- <a href="#">
-    </a> -->
+      <Icon iconName="Email" {width} {fill} />
+    </Modal>
   </aside>
   <span class="navigation-menu-icon">
     <svg

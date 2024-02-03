@@ -5,7 +5,7 @@ import Icon from "./Icon.astro";
 <!-- Pulir componente -->
 
 <dialog>
-  <button autofocus>
+  <button autofocus class="close">
     <Icon iconName="Cross" width="2rem" color="var(--secondary-l)" />
   </button>
   <slot name="modal-content">
@@ -22,6 +22,11 @@ import Icon from "./Icon.astro";
   dialog::backdrop {
     backdrop-filter: blur(15px);
   }
+  dialog {
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--primary-l);
+  }
   button {
     margin: 0;
     padding: 0;
@@ -29,6 +34,10 @@ import Icon from "./Icon.astro";
     border: none;
     background: none;
     cursor: pointer;
+  }
+  .close {
+    display: block;
+    margin-left: auto;
   }
 </style>
 
