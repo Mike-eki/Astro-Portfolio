@@ -1,7 +1,8 @@
 ---
-import Pill from "../Pill.astro";
 import skillsJson from "../../data/data.json";
 import BaseSection from "../BaseSection.astro";
+import BentoSkills from "../BentoSkills.astro";
+
 const width = "1.5rem";
 const {
   skills: { techs, tools },
@@ -25,31 +26,9 @@ const {
       ))
     } -->
   </Fragment>
-  <article class="grid">
-    <h5 class="title item">Frontend</h5>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-    <div class="item"></div>
-  </article>
+  <BentoSkills />
 </BaseSection>
 
-
 <style>
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .item {
-    width: 100px;
-    height: 100px;
-    background-color: var(--secondary-l);
-  }
-  .title {
-    width: 100%;
-    background-color: var(--accent-l);
-    grid-column: 1 / 4;
-  }
+  
 </style>
