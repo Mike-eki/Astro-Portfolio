@@ -9,6 +9,17 @@ import Send from '../icons/utilities/send.astro'
 import Copy from '../icons/utilities/copy.astro'
 import CV from '../icons/utilities/cv.astro'
 
+import Calendar from '../icons/about/calendar.astro'
+import ChefHat from '../icons/about/chef-hat.astro'
+import Code from '../icons/about/code.astro'
+import Joystick from '../icons/about/joystick.astro'
+import Language from '../icons/about/language.astro'
+import MapPin from '../icons/about/map-pin.astro'
+import Pallete from '../icons/about/pallete.astro'
+import Writing from '../icons/about/writing.astro'
+import Book from '../icons/about/book.astro'
+import Barbel from '../icons/about/barbel.astro'
+
 import HTML from '../icons/techs/html.astro'
 import CSS from '../icons/techs/css.astro'
 import JavaScript from '../icons/techs/javascript.astro';
@@ -17,10 +28,13 @@ import AstroIcon from '../icons/techs/astro-icon.astro';
 import NodeJS from '../icons/techs/nodejs.astro';
 import ExpressJS from '../icons/techs/express.astro';
 import NextJS from '../icons/techs/nextjs.astro';
+import NexJSReal from '../icons/techs/nextjs-real.astro'
 import Trello from '../icons/tools/trello.astro';
 import VSCode from '../icons/tools/vscode.astro';
 import Git from '../icons/tools/git.astro';
 import Figma from '../icons/tools/figma.astro';
+import VSCodeReal from '../icons/tools/vscode-real.astro'
+import FigmaReal from '../icons/tools/figma-real.astro'
 
 const {iconName = "Umbrella", fill, color, width} = Astro.props
 
@@ -35,18 +49,32 @@ const iconMap = {
     Copy,
     CV,
 
+    Calendar,
+    ChefHat,
+    Code,
+    Joystick,
+    Language,
+    MapPin,
+    Pallete,
+    Writing,
+    Book,
+    Barbel,
+
     HTML,
     CSS,
     JavaScript,
     Git,
     Trello,
     VSCode,
+    VSCodeReal,
     React,
     AstroIcon,
     NodeJS,
     ExpressJS,
     NextJS,
-    Figma
+    NexJSReal,
+    Figma,
+    FigmaReal
 }
 
 const IconType = iconMap[iconName]

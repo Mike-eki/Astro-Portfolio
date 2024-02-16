@@ -1,15 +1,78 @@
 ---
-import BaseSection from "../BaseSection.astro"
+import BaseSection from "../BaseSection.astro";
+import Icon from "../Icon.astro";
 ---
 
-  <BaseSection title="Sobre mi">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem ducimus quaerat est vero cupiditate corporis.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore similique, perferendis a rem iure id.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium eaque eveniet quas, optio cumque obcaecati.</p>
-  </BaseSection>
+<BaseSection title="Sobre mi">
+  <Fragment slot="map-content">
+    <div class="container">
+      <div class="portrait">
+        <div class="portrait-frame">
+          <img src="./portrait.webp" alt="portrait" />
+        </div>
+        <div class="caption">
+          <h4>Miqueas Moreno</h4>
+        </div>
+        <ul class="info">
+          <li class="birth">
+            <span><Icon iconName="Calendar" width="1.5rem" color="aqua" /></span>19
+            de Enero, 1999
+          </li>
+          <li class="country"><span><Icon iconName="MapPin" width="1.5rem" color="aqua" /></span>Argentina</li>
+          <li class="languages"><span><Icon iconName="Language" width="1.5rem" color="aqua" /></span>Español - Ingles</li>
+        </ul>
+        <footer class="interests">
+          <h4>Interests</h4>
+          <div>
+            <span><Icon iconName="Pallete" width="1.5rem" color="aqua" /></span>
+            <span><Icon iconName="Joystick" width="1.5rem" color="aqua" /></span>
+            <span><Icon iconName="ChefHat" width="1.5rem" color="aqua" /></span>
+            <span><Icon iconName="Code" width="1.5rem" color="aqua" /></span>
+            <span><Icon iconName="Writing" width="1.5rem" color="aqua" /></span>
+            <span><Icon iconName="Book" width="1.5rem" color="aqua" /></span>
+            <span><Icon iconName="Barbel" width="1.5rem" color="aqua" /></span>
+          </div>
+        </footer>
+      </div>
+      <div class="text">
+        <p>
+          Mi nombre es Miqueas, aunque mi circulo cercano me llaman Mike.
+          Descubrí el mundo de la programación al darme cuenta de que los
+          videojuegos que disfruto estan construidos a través de este
+          apasionante proceso. Hoy en día, <b
+            >me encuentro trabajando en diversos proyectos, algunos para
+            clientes y otros de índole personal.</b
+          >
+        </p>
+        <p>
+          Entre mis logros más destacados, resalto el <b
+            >desarrollo del sitio web para OceanDream, una inmobiliaria
+            colombiana que requería una presencia digital para exhibir sus
+            propiedades de manera atractiva.</b
+          > Este proyecto marcó mi inicio trabajando para clientes, y estoy
+          realmente complacido con el resultado obtenido.
+        </p>
+        <p>
+          Mi objetivo es <b
+            >crear experiencias digitales únicas que no solo satisfagan las
+            necesidades del usuario, sino que también superen las expectativas.</b
+          > Busco fusionar la creatividad con la funcionalidad, diseñando
+          soluciones intuitivas y atractivas que destaquen en el vasto mundo
+          digital.
+        </p>
+      </div>
+    </div>
+  </Fragment>
+</BaseSection>
 
 <style>
-    section {
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,5 +83,56 @@ import BaseSection from "../BaseSection.astro"
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  img {
+    max-width: 100%;
+    aspect-ratio: 1 / 1.2;
+    object-fit: cover;
+    object-position: top;
+    opacity: 0.5;
+  }
+  .container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  .portrait {
+    position: relative;
+    align-self: center;
+    border-radius: 1rem;
+    border: 12px solid var(--secondary-d);
+  }
+  .portrait-frame {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    background-color: var(--primary-d);
+    padding: 0.6rem;
+  }
+  .caption {
+    padding: 1rem;
+    text-align: center;
+    color: var(--secondary-l);
+    font-weight: 600;
+    background-color: var(--accent-d);
+  }
+  .info {
+    padding-block: 0.3rem;
+    padding-inline: 0.75rem;
+  }
+  .info li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .interests {
+    padding-inline: 0.75rem;
+  }
+  .text {
+    max-width: 50ch;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 </style>

@@ -12,7 +12,7 @@ const {
   links,
 } = Astro.props;
 
-
+const width = "0.8rem"
 
 ---
 
@@ -37,7 +37,7 @@ const {
     <h4>Tecnologias</h4>
     <footer>
       {
-        techPills.map(({ iconName, width, fill, color, content }) => 
+        techPills.map(({ iconName, fill, color, content }) => 
           <Pill {iconName} {width} {fill} {color}>
 			{content}
 		  </Pill>
@@ -49,7 +49,7 @@ const {
     <h4>Herramientas</h4>
     <footer>
 		{
-			toolPills.map(({ iconName, width, fill, color, content }) => 
+			toolPills.map(({ iconName, fill, color, content }) => 
 			  <Pill {iconName} {width} {fill} {color}>
 				{content}
 			  </Pill>

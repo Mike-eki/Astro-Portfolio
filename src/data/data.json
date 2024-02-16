@@ -1,90 +1,80 @@
 {
   "skills": {
-    "techs": [
+    "frontend": [
       {
         "iconName": "HTML",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--primary-d)",
+        "fill": "#E24E26",
+        "color": "#FFF",
         "content": "HTML"
       },
       {
         "iconName": "CSS",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--primary-d)",
+        "fill": "#0C73B7",
+        "color": "#FFF",
         "content": "CSS"
       },
       {
         "iconName": "JavaScript",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--primary-d)",
+        "fill": "#F0DA4E",
+        "color": "#333331",
         "content": "JavaScript"
       },
       {
         "iconName": "React",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--primary-d)",
+        "fill": "#01D8FE",
+        "color": "#01D8FE",
         "content": "React"
       },
       {
         "iconName": "AstroIcon",
-        "width": "0.8rem",
-        "fill": "var(--secondary-l)",
-        "color": "var(--secondary-d)",
+        "fill": "#FFF",
+        "color": "#FE5C01",
         "content": "Astro"
-      },
+      }
+    ],
+    "backend": [
       {
         "iconName": "NodeJS",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--primary-d)",
+        "fill": "#539F42",
+        "color": "#539F42",
         "content": "NodeJS"
       },
       {
         "iconName": "ExpressJS",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--primary-d)",
+        "fill": "#F2F2F3",
+        "color": "#F2F2F3",
         "content": "ExpressJS"
       },
       {
-        "iconName": "NextJS",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--primary-d)",
+        "iconName": "NexJSReal",
+        "fill": "#000",
+        "color": "#FFF",
         "content": "NextJS"
       }
     ],
     "tools": [
       {
         "iconName": "Git",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
+        "fill": "#D14F3B",
         "color": "var(--primary-d)",
         "content": "Git"
       },
       {
         "iconName": "VSCode",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
+        "fill": "#3584BB",
         "color": "var(--primary-d)",
-        "content": "Visual Studio Code"
+        "content": "VS Code"
       },
       {
         "iconName": "Trello",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--primary-d)",
+        "fill": "#0178BE",
+        "color": "#FFF",
         "content": "Trello"
       },
       {
-        "iconName": "Figma",
-        "width": "0.8rem",
-        "fill": "var(--secondary-d)",
-        "color": "var(--secondary-l)",
+        "iconName": "FigmaReal",
+        "fill": "",
+        "color": "",
         "content": "Figma"
       }
     ]

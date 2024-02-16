@@ -1,44 +1,80 @@
 ---
-import skillsJson from "../data/data.json";
 import Icon from "./Icon.astro";
 
-const props = Astro.props;
+const width = "2.5rem"
+
+const { area, title } = Astro.props;
 ---
 
 <article class="grid">
   <div class="item double-row">
-    <span>
-      <Icon
-        iconName="HTML"
-        width="2.5rem"
-        fill="var(--primary-l)"
-        color="var(--secondary-l)"
-      />HTML
-    </span>
-    <span>
-      <Icon
-        iconName="CSS"
-        width="2.5rem"
-        fill="var(--primary-l)"
-        color="var(--secondary-l)"
-      />CSS
-    </span>
+    {
+      area.map(({iconName, fill, color, content}, index) => {
+        {return index <= 1 && 
+          <span><Icon {iconName} {width} {fill} {color}></Icon>{content}</span>}
+      })
+    }
   </div>
-  <div class="item">2</div>
-  <div class="item double-column">3</div>
-  <h3 class="title item double">Frontend</h3>
-  <div class="item">5</div>
-  <div class="item">6</div>
-  <div class="item double-row">7</div>
-  <div class="item double-column">8</div>
-  <div class="item">9</div>
+  <div class="item">
+    {
+      area.map(({iconName, fill, color, content}, index) => {
+        {return index === 2 && 
+          <span><Icon {iconName} {width} {fill} {color}></Icon>{content}</span>}
+      })
+    }
+  </div>
+  <div class="item double-column">
+    {
+      area.map(({iconName, fill, color, content}, index) => {
+        {return index >= 3 && index <= 5 && 
+          <span><Icon {iconName} {width} {fill} {color}></Icon>{content}</span>}
+      })
+    }
+  </div>
+  <h3 class="item title double">{title}</h3>
+  <div class="item">
+    {
+      area.map(({iconName, fill, color, content}, index) => {
+        {return index === 6 && 
+          <span><Icon {iconName} {width} {fill} {color}></Icon>{content}</span>}
+      })
+    }
+  </div>
+  <div class="item">
+    {
+      area.map(({iconName, fill, color, content}, index) => {
+        {return index === 7 && 
+          <span><Icon {iconName} {width} {fill} {color}></Icon>{content}</span>}
+      })
+    }
+  </div>
+  <div class="item double-row">
+    {
+      area.map(({iconName, fill, color, content}, index) => {
+        {return index >= 8 && index <= 10 && 
+          <span><Icon {iconName} {width} {fill} {color}></Icon>{content}</span>}
+      })
+    }
+  </div>
+  <div class="item double-column">
+    {
+      area.map(({iconName, fill, color, content}, index) => {
+        {return index >= 11 && index <= 13 && 
+          <span><Icon {iconName} {width} {fill} {color}></Icon>{content}</span>}
+      })
+    }
+  </div>
+  <div class="item">
+    {
+      area.map(({iconName, fill, color, content}, index) => {
+        {return index === 14 &&
+          <span><Icon {iconName} {width} {fill} {color}></Icon>{content}</span>}
+      })
+    }
+  </div>
 </article>
 
 <style>
-    .title {
-        font-size: 2rem;
-        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-    }
   .grid {
     display: grid;
     grid-template-columns: repeat(4, 100px);
@@ -46,35 +82,48 @@ const props = Astro.props;
     place-items: center;
     grid-auto-rows: 100px;
     gap: 0.25rem;
+    color: var(--secondary-l);
   }
   .item {
     width: 100%;
     height: 100%;
     border-radius: 0.33rem;
     background-color: var(--secondary-d);
-    color: var(--primary-l);
     font-weight: 600;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--primary-d);
+    background-image: radial-gradient(at center, var(--accent-d) 0%, var(--primary-l) 300%)
   }
-  .double-row span {
+  .title {
+        color: var(--primary-l);
+        font-size: 2rem;
+        background-image: linear-gradient(360deg, #84fab0 0%, #8fd3f4 100%);
+    }
+  span {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.3rem;
+  }
+  .double-row span,
+  .item span {
+    flex-direction: column;
   }
   .double-row {
     grid-row: span 2;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
-    mix-blend-mode: lighten;
+    background: var(--accent-l);
+    background-image: linear-gradient(360deg, var(--primary-d), var(--accent-d));
   }
   .double-column {
     grid-column: span 2;
+    justify-content: space-around;
+    background: var(--accent-d);
+    background-image: linear-gradient(360deg, var(--primary-d), var(--accent-d));
   }
   .double {
     grid-row: 2 / 4;

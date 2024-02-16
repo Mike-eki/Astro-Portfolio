@@ -4,29 +4,13 @@ import BaseSection from "../BaseSection.astro";
 import BentoSkills from "../BentoSkills.astro";
 
 const width = "1.5rem";
-const {
-  skills: { techs, tools },
-} = skillsJson;
+const {skills: {frontend, backend, tools}} = skillsJson;
 ---
 
 <BaseSection title="Habilidades">
-  <Fragment slot="map-content">
-    <!-- {
-      techs.map(({ iconName, fill, color, content }) => (
-        <Pill {iconName} {fill} {color} {width}>
-          {content}
-        </Pill>
-      ))
-    }
-    {
-      tools.map(({ iconName, fill, color, content }) => (
-        <Pill {iconName} {fill} {color} {width}>
-          {content}
-        </Pill>
-      ))
-    } -->
-  </Fragment>
-  <BentoSkills />
+  <BentoSkills title="Frontend" area={frontend} slot="map-content"/>
+  <BentoSkills title="Backend" area={backend} slot="map-content"/>
+  <BentoSkills title="Tools" area={tools} slot="map-content"/>
 </BaseSection>
 
 <style>
