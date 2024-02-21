@@ -35,6 +35,12 @@ import Git from '../icons/tools/git.astro';
 import Figma from '../icons/tools/figma.astro';
 import VSCodeReal from '../icons/tools/vscode-real.astro'
 import FigmaReal from '../icons/tools/figma-real.astro'
+import TypeORM from '../icons/techs/typeorm.astro'
+import Sequelize from '../icons/techs/sequelize.astro'
+import MySQL from '../icons/techs/mysql.astro'
+import PostgreSQL from '../icons/techs/postgresql.astro'
+
+
 
 const {iconName = "Umbrella", fill, color, width} = Astro.props
 
@@ -74,7 +80,11 @@ const iconMap = {
     NextJS,
     NexJSReal,
     Figma,
-    FigmaReal
+    FigmaReal,
+    TypeORM,
+    Sequelize,
+    PostgreSQL,
+    MySQL
 }
 
 const IconType = iconMap[iconName]

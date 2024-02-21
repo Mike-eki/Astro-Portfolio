@@ -5,31 +5,49 @@
         "iconName": "HTML",
         "fill": "#E24E26",
         "color": "#FFF",
-        "content": "HTML"
+        "content": "HTML",
+        "isRow": true,
+        "isCol": false
       },
       {
         "iconName": "CSS",
         "fill": "#0C73B7",
         "color": "#FFF",
-        "content": "CSS"
+        "content": "CSS",
+        "isRow": true,
+        "isCol": false
       },
       {
         "iconName": "JavaScript",
         "fill": "#F0DA4E",
         "color": "#333331",
-        "content": "JavaScript"
+        "content": "JavaScript",
+        "isRow": false,
+        "isCol": false
       },
       {
         "iconName": "React",
         "fill": "#01D8FE",
         "color": "#01D8FE",
-        "content": "React"
+        "content": "React",
+        "isRow": false,
+        "isCol": true
       },
       {
         "iconName": "AstroIcon",
         "fill": "#FFF",
         "color": "#FE5C01",
-        "content": "Astro"
+        "content": "Astro",
+        "isRow": false,
+        "isCol": true
+      },
+      {
+        "iconName": "NexJSReal",
+        "fill": "#000",
+        "color": "#FFF",
+        "content": "NextJS",
+        "isRow": false,
+        "isCol": true
       }
     ],
     "backend": [
@@ -37,20 +55,51 @@
         "iconName": "NodeJS",
         "fill": "#539F42",
         "color": "#539F42",
-        "content": "NodeJS"
+        "content": "NodeJS",
+        "isRow": true,
+        "isCol": false
       },
       {
         "iconName": "ExpressJS",
         "fill": "#F2F2F3",
         "color": "#F2F2F3",
-        "content": "ExpressJS"
+        "content": "ExpressJS",
+        "isRow": true,
+        "isCol": false
       },
       {
-        "iconName": "NexJSReal",
-        "fill": "#000",
-        "color": "#FFF",
-        "content": "NextJS"
+        "iconName": "PostgreSQL",
+        "fill": "",
+        "color": "",
+        "content": "PostgreSQL",
+        "isRow": false,
+        "isCol": false
+      },
+      {
+        "iconName": "TypeORM",
+        "fill": "",
+        "color": "",
+        "content": "TypeORM",
+        "isRow": false,
+        "isCol": true
+      },
+      {
+        "iconName": "Sequelize",
+        "fill": "",
+        "color": "",
+        "content": "Sequelize",
+        "isRow": false,
+        "isCol": true
+      },
+      {
+        "iconName": "MySQL",
+        "fill": "",
+        "color": "",
+        "content": "MySQL",
+        "isRow": false,
+        "isCol": false
       }
+      
     ],
     "tools": [
       {
