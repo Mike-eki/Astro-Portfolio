@@ -1,8 +1,8 @@
 ---
-const {title} = Astro.props
+const {title, id} = Astro.props
 ---
 
-<section>
+<section {id}>
     <h3>{title}</h3>
     <aside>
         <slot name="map-content"/>

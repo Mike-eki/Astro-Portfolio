@@ -3,11 +3,10 @@ import skillsJson from "../../data/data.json";
 import BaseSection from "../BaseSection.astro";
 import BentoSkills from "../BentoSkills.astro";
 
-const width = "1.5rem";
 const {skills: {frontend, backend, tools}} = skillsJson;
 ---
 
-<BaseSection title="Habilidades">
+<BaseSection title="Habilidades" id="habilidades">
   <BentoSkills title="Frontend" area={frontend} slot="map-content"/>
   <!-- Agregar TypeORM, Sequelize, MySQL, etc -->
   <BentoSkills title="Backend" area={backend} slot="map-content"/>
